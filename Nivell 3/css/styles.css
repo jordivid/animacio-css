@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    height: 98vh;
+    overflow: hidden;
+}
+
+/* Animacions de cada un dels blocs.
+   El 1er i el 4rt empren la mateixa animació
+   amb diferent timing. */
+@keyframes anim-block1 {
+    0% {
+        left: -21%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+@keyframes anim-block2-4 {
+    0% {
+        bottom: -102%;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+}
+
+@keyframes anim-block3 {
+    0% {
+        top: -101%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes anim-block5 {
+    0% {
+        right: -21%;
+    }
+
+    100% {
+        right: 0%;
+    }
+}
+
+/* Estils comuns a tots els blocs */
+.block {
+    height: 100%;
+    width: 20%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.2%;
+    color: white;
+    font-size: 4em;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Caixa transparent */
+.difuminat {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: skew(30deg);
+}
+
+/* Paràmetres de l'animació i color de fons de cada bloc */
+#block1 {
+    background-color: #244F75;
+    left: -21%;
+    animation-name: anim-block1;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+#block2 {
+    background-color: #60BFBF;
+    bottom: -102%;
+    animation-name: anim-block2-4;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+#block3 {
+    background-color: #8C4B7E;
+    top: -101%;
+    animation-name: anim-block3;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+#block4 {
+    background-color:#F8BB44;
+    bottom: -102%;
+    animation-name: anim-block2-4;
+    animation-duration: 0.75s;
+    animation-delay: 0.35s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+#block5 {
+    background-color: #F24B4B;
+    right: -21%;
+    animation-name: anim-block5;
+    animation-duration: 0.5s;
+    animation-delay: 0.70s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* Efecte hover */
+.block:hover{
+    cursor: pointer;
+}
+
+.block:hover div {
+    transform: skew(0deg);
+}
